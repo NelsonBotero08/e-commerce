@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lobster&family=Montserrat:wght@300;400;500;600;700&family=Yantramanav:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yantramanav", sans-serif;
+}
+
+ul {
+  list-style: none;
+  font-family: inherit;
+}
+
+li,
+a,
+p {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: inherit;
+}

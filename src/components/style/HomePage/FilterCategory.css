@@ -1,0 +1,37 @@
+.categories {
+  width: 100%;
+  padding: 0 4em 0 0;
+}
+
+.div__categories--title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(157, 156, 156);
+}
+
+.separator {
+  margin-bottom: 1em;
+}
+
+.ul__categories {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+}
+
+.ul__categories-down {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
+}
+
+.li__categories {
+  margin-bottom: 0.5em;
+  color: rgb(98, 98, 98);
+  cursor: pointer;
+  padding-left: 2em;
+}

@@ -1,0 +1,92 @@
+.formLogin {
+  padding: 65px 3em 0 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bxs-user-circle {
+  font-size: 10em;
+}
+
+.section__form--login {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 0.3em;
+  background-color: white;
+}
+
+.label__email--login,
+.label__password--login {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.label__email--login {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.label__password--login {
+  margin-bottom: 3em;
+}
+
+.span__email--login {
+  font-size: 1.2em;
+  color: black;
+  padding-right: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+.input__email--login,
+.input__password--login {
+  width: 250px;
+  height: 30px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 0.2em;
+  display: flex;
+  align-items: end;
+  padding-left: 0.5em;
+  font-size: 1.2em;
+}
+
+.btn__login {
+  width: 90%;
+  height: 30px;
+  background-color: #f85555;
+  border: none;
+  border-radius: 0.3em;
+}
+
+.logout {
+  display: none;
+}
+
+.logoutvisible {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 0.3em;
+  background-color: white;
+}
+
+.logintvisible {
+  display: none;
+}

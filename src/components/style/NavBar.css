@@ -1,0 +1,40 @@
+.navbar {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.navbar__title {
+  width: 50%;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(128, 128, 128, 0.422);
+}
+
+.navbar__title a {
+  font-size: 2rem;
+  color: red;
+  text-decoration: none;
+}
+
+.navbar__div--button {
+  display: flex;
+  width: 50%;
+}
+
+.navbar__button {
+  width: 100%;
+  background-color: white;
+  border: 1px solid rgba(128, 128, 128, 0.422);
+}
+
+.bx-user,
+.bx-list-ul,
+.bx-cart,
+.bxs-user-detail {
+  font-size: 2em;
+  color: rgba(128, 128, 128, 0.456);
+}

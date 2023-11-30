@@ -1,0 +1,5 @@
+.div__similar--product {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
