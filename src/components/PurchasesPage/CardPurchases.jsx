@@ -9,7 +9,7 @@ const CardPurchases = ({ infoPurchase }) => {
       <p>{infoPurchase.product.createdAt.slice(0, 10)}</p>
       <h3>{infoPurchase.product.title}</h3>
       <p>{infoPurchase.quantity}</p>
-      <h3>{infoPurchase.quantity * infoPurchase.product.price}</h3>
+      <h3>${infoPurchase.quantity * infoPurchase.product.price}</h3>
     </section>
   );
 };
