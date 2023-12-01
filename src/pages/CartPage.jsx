@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartThunk } from "../store/slices/Cart.slice";
 import "./style/CartPage.css";
+import CartProduct from "../components/CardPage/CartProduct";
 
 const CartPage = () => {
   const cart = useSelector((store) => store.cart);
@@ -21,30 +22,22 @@ const CartPage = () => {
     dispatch(getCartThunk());
   }, []);
 
-  console.log(cart);
+  const total = cart.reduce((acc, cv) => {
+    const price = Number(cv.product.price);
+    return acc + price * cv.quantity;
+  }, 0);
+
   return (
-    <div className="cart-container">
-      <ul className="container">
-        {cart?.map((prod) => (
-          <li className="li__container" key={prod.id}>
-            <section className="section__img--cart">
-              <img
-                className="img--cart"
-                src={prod.product.images[0].url}
-                alt={prod.product.title}
-              />
-            </section>
-            <section>
-              {prod.product.title}
-              <button onClick={handleMinus}>-</button>
-              {prod.quantity}
-              <button onClick={handlePlus}>+</button>
-              <h3>${prod.product.price}</h3>
-              <i className="bx bx-trash"></i>
-            </section>
-          </li>
+    <div>
+      <div className="cart-container">
+        {cart.map((prod) => (
+          <CartProduct prod={prod} />
         ))}
-      </ul>
+      </div>
+      <footer>
+        <span>Total</span>
+        <span>{total}</span>
+      </footer>
     </div>
   );
 };

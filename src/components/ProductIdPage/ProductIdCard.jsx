@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import SimilarProducts from "./SimilarProducts";
 import "../style/ProductIdPage/ProductIdCard.css";
 import { Link } from "react-router-dom";
+import { addProductToCartThunk } from "../../store/slices/Cart.slice";
+import { useDispatch } from "react-redux";
 
 const ProductIdCard = ({ productId }) => {
   const [quantity, setQuantity] = useState(1);
@@ -61,6 +63,12 @@ const ProductIdCard = ({ productId }) => {
     const newImage = productId.images[nextIndex].url;
 
     setCurrentImage(newImage);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addProductToCartThunk(productId?.id, quantity));
   };
 
   return (
@@ -134,7 +142,9 @@ const ProductIdCard = ({ productId }) => {
             </section>
           </section>
           <div className="div__btn--addtocart">
-            <button className="btn__addtocart">Add to cart</button>
+            <button onClick={handleAddToCart} className="btn__addtocart">
+              Add to cart
+            </button>
           </div>
         </section>
       </article>

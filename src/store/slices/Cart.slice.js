@@ -40,9 +40,11 @@ export const addProductToCartThunk =
   };
 
 export const deleteProductFromCartThunk = (id) => (dispatch) => {
-  const url = `${baseUrl}`;
+  const url = `${baseUrl}/${id}`;
   axios
-    .post(url, getConfigToken())
-    .then((res) => console.log(res.data))
+    .delete(url, getConfigToken())
+    .then((res) => {
+      dispatch(deleteItemCart(id));
+    })
     .catch((e) => console.log(e));
 };
