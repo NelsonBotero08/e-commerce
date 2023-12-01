@@ -4,9 +4,11 @@ import { useState } from "react";
 const useFetch = () => {
   const [infoApi, setInfoApi] = useState();
 
-  const getApi = (url) => {
+  const cb = () => ({});
+
+  const getApi = (url, getConfig = cb) => {
     axios
-      .get(url)
+      .get(url, getConfig)
       .then((res) => setInfoApi(res.data))
       .catch((e) => console.log(e));
   };

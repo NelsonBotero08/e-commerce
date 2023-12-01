@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartThunk } from "../store/slices/Cart.slice";
+import { getCartThunk, setCart } from "../store/slices/Cart.slice";
 import "./style/CartPage.css";
 import CartProduct from "../components/CardPage/CartProduct";
+import getConfigToken from "../utils/getConfigToken";
+import axios from "axios";
 
 const CartPage = () => {
   const cart = useSelector((store) => store.cart);
-  const [cartQuantity, setCartQuantity] = useState(1);
 
   const dispatch = useDispatch();
-
-  const handlePlus = () => {
-    setCartQuantity(cartQuantity + 1);
-  };
-
-  const handleMinus = () => {
-    setCartQuantity(cartQuantity + 1);
-  };
 
   useEffect(() => {
     dispatch(getCartThunk());
@@ -26,6 +19,17 @@ const CartPage = () => {
     const price = Number(cv.product.price);
     return acc + price * cv.quantity;
   }, 0);
+
+  const handlePurchase = () => {
+    const url = "https://e-commerce-api-v2.academlo.tech/api/v1/purchases";
+    axios
+      .post(url, "", getConfigToken())
+      .then((res) => {
+        console.log(res.data);
+        dispatch(setCart([]));
+      })
+      .catch((e) => console.log(e));
+  };
 
   return (
     <div>
@@ -37,6 +41,7 @@ const CartPage = () => {
       <footer>
         <span>Total</span>
         <span>{total}</span>
+        <button onClick={handlePurchase}>Checkout</button>
       </footer>
     </div>
   );
