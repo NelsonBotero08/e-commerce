@@ -13,35 +13,6 @@
   transition: left 0.3s ease-in-out;
 }
 
-@media (max-width: 1000px) {
-  .cart-container {
-    left: 50%;
-  }
-}
-@media (max-width: 950px) {
-  .cart-container {
-    left: 50%;
-  }
-}
-
-@media (max-width: 900px) {
-  .cart-container {
-    left: 50%;
-  }
-}
-
-@media (max-width: 850px) {
-  .cart-container {
-    left: 50%;
-  }
-}
-
-@media (max-width: 800px) {
-  .cart-container {
-    left: 50%;
-  }
-}
-
 @media (max-width: 750px) {
   .cart-container {
     left: 40%;
@@ -56,6 +27,6 @@
 
 @media (max-width: 600px) {
   .cart-container {
-    left: 0%;
+    left: -10px;
   }
 }
