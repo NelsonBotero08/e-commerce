@@ -38,3 +38,9 @@
   font-size: 2em;
   color: rgba(128, 128, 128, 0.456);
 }
+
+@media (max-width: 700px) {
+  .navbar__title a {
+    font-size: 1.5rem;
+  }
+}

@@ -4,6 +4,7 @@ import { getCartThunk, setCart } from "../store/slices/Cart.slice";
 import "./style/CartPage.css";
 import CartProduct from "../components/CardPage/CartProduct";
 import getConfigToken from "../utils/getConfigToken";
+import "../pages/style/CartPage.css";
 import axios from "axios";
 
 const CartPage = () => {
@@ -32,16 +33,18 @@ const CartPage = () => {
   };
 
   return (
-    <div>
-      <div className="cart-container">
+    <div className="cart-container">
+      <div className="cartproduct-container">
         {cart.map((prod) => (
           <CartProduct prod={prod} />
         ))}
       </div>
-      <footer>
-        <span>Total</span>
-        <span>{total}</span>
-        <button onClick={handlePurchase}>Checkout</button>
+      <footer className="footer-container">
+        <div className="div__footer">
+          <span>Total</span>
+          <span>${total}</span>
+          <button onClick={handlePurchase}>Checkout</button>
+        </div>
       </footer>
     </div>
   );
