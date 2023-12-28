@@ -1,5 +1,5 @@
 .formLogin {
-  padding: 65px 3em 0 3em;
+  padding: 65px 1em 0 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@
 
 .section__form--login {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   height: 400px;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@
 
 .input__email--login,
 .input__password--login {
-  width: 250px;
+  width: 100%;
   height: 30px;
   border: 1px solid rgb(176, 176, 176);
   border-radius: 0.2em;

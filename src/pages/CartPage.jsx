@@ -41,9 +41,14 @@ const CartPage = () => {
       </div>
       <footer className="footer-container">
         <div className="div__footer">
-          <span>Total</span>
-          <span>${total}</span>
-          <button onClick={handlePurchase}>Checkout</button>
+          <div className="footer">
+            <span className="footer__span">Total</span>
+            <span className="footer__price">${total}</span>
+          </div>
+
+          <button className="footer__btn" onClick={handlePurchase}>
+            Checkout
+          </button>
         </div>
       </footer>
     </div>

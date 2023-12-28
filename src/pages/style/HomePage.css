@@ -37,3 +37,13 @@
   justify-content: start;
   flex-wrap: wrap;
 }
+
+@media (max-width: 900px) {
+  .homepage {
+    padding-left: 0px;
+  }
+
+  .filteres {
+    display: none;
+  }
+}

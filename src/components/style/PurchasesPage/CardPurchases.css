@@ -1,0 +1,54 @@
+.section__purchases {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  border: 1px solid black;
+  padding: 50px 1em 1em 1em;
+}
+
+.header__purchases {
+  width: 100%;
+}
+
+.img__purchases {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.section__purchases > p {
+  width: 100%;
+  font-size: 1em;
+  text-align: center;
+}
+
+.section__purchases > h4 {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .img__purchases {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+  .section__purchases {
+    gap: 0.5em;
+  }
+
+  .section__purchases > p {
+    width: 100%;
+    font-size: 0.6em;
+    text-align: center;
+  }
+
+  .section__purchases > h4 {
+    width: 100%;
+    font-size: 0.6em;
+    text-align: center;
+  }
+}

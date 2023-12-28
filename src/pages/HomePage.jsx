@@ -5,6 +5,7 @@ import ProductCard from "../components/HomePage/ProductCard";
 import FilterCategory from "../components/HomePage/FilterCategory";
 import FilterPrice from "../components/HomePage/FilterPrice";
 import "./style/HomePage.css";
+import CartPage from "./CartPage";
 
 const HomePage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -54,7 +55,6 @@ const HomePage = () => {
             onChange={handleSearch}
           />
         </div>
-
         <div className="products__card">
           {products?.filter(callbackFilter).map((product) => (
             <ProductCard key={product.id} product={product} />
