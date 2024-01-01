@@ -7,14 +7,20 @@ const cartSlice = createSlice({
   initialState: [],
   reducers: {
     addToCart: (state, action) => [...state, action.payload],
-    deleteItemCart: (state, action) => {
-      return state.filter((prod) => prod.id !== action.payload);
-    },
+    deleteItemCart: (state, action) =>
+      state.filter((prod) => prod.id !== action.payload),
     setCart: (state, action) => action.payload,
+    updateItemCart: (state, action) => {
+      const { id, quantity } = action.payload;
+      return state.map((prod) =>
+        prod.id === id ? { ...prod, quantity } : prod
+      );
+    },
   },
 });
 
-export const { addToCart, deleteItemCart, setCart } = cartSlice.actions;
+export const { addToCart, deleteItemCart, setCart, updateItemCart } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
 
@@ -45,6 +51,17 @@ export const deleteProductFromCartThunk = (id) => (dispatch) => {
     .delete(url, getConfigToken())
     .then((res) => {
       dispatch(deleteItemCart(id));
+    })
+    .catch((e) => console.log(e));
+};
+
+export const updateItemCartThunk = (id, quantity) => (dispatch) => {
+  const url = `${baseUrl}/${id}`;
+  const data = { quantity };
+  axios
+    .put(url, data, getConfigToken())
+    .then((res) => {
+      dispatch(updateItemCart({ id, quantity }));
     })
     .catch((e) => console.log(e));
 };
