@@ -5,6 +5,7 @@
   cursor: pointer;
   max-width: 17em;
   width: 100%;
+  min-height: 200px;
   border: 1px solid rgba(162, 161, 161, 0.692);
   border-radius: 0.5em;
   position: relative;
@@ -32,7 +33,6 @@
   grid-row: 2;
   padding: 10px;
   min-height: 200px;
-  position: relative;
 }
 
 .title__productCard {
@@ -67,20 +67,29 @@
   padding: 0.3em;
   color: white !important;
   position: absolute;
-  top: 130px;
+  top: 370px;
   left: 200px;
 }
 
 @keyframes fadeOut {
   from {
-    opacity: 1;
+    display: block;
   }
   to {
-    opacity: 0;
+    display: none;
   }
 }
 
-.showmodal {
+.showmodal__success {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeOut 2s ease-in-out forwards;
+}
+
+.showmodal__error {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;

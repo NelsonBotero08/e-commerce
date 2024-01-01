@@ -50,20 +50,20 @@ const ProductCard = ({ product }) => {
           <span className="h3__productCard">${product.price}</span>
         </div>
         <i onClick={handleAddCart} className="bx bx-cart cart"></i>
-      </section>
-      <section
-        className={`modal__addtocart ${
-          showSuccessModal && activeId === product.id ? "showmodal" : ""
-        }`}
-      >
-        {showSuccessModal && activeId === product.id && <ModalAddCart />}
-      </section>
-      <section
-        className={`modal__addtocart ${showErrorModal ? "showmodal" : ""}`}
-      >
-        {showErrorModal && activeId === product.id && showSuccessModal && (
-          <ModalErrorAddToCart />
-        )}
+        <section
+          className={`${
+            showSuccessModal && activeId === product.id
+              ? "showmodal__success"
+              : ""
+          }`}
+        >
+          {showSuccessModal && activeId === product.id && <ModalAddCart />}
+        </section>
+        <section className={`${showErrorModal ? "showmodal__error" : ""}`}>
+          {showErrorModal && activeId === product.id && showSuccessModal && (
+            <ModalErrorAddToCart />
+          )}
+        </section>
       </section>
     </article>
   );
