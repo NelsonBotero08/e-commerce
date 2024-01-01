@@ -7,6 +7,7 @@
   width: 100%;
   border: 1px solid rgba(162, 161, 161, 0.692);
   border-radius: 0.5em;
+  position: relative;
 }
 
 .header__producCard {
@@ -68,4 +69,20 @@
   position: absolute;
   top: 130px;
   left: 200px;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.showmodal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeOut 2s ease-in-out forwards;
 }
