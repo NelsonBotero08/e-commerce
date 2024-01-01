@@ -4,11 +4,16 @@ import "../style/ProductIdPage/ProductIdCard.css";
 import { Link } from "react-router-dom";
 import { addProductToCartThunk } from "../../store/slices/Cart.slice";
 import { useDispatch } from "react-redux";
+import ModalErrorAddToCart from "../../pages/ModalErrorAddToCart";
+import ModalAddCart from "../../pages/ModalAddCart";
 
 const ProductIdCard = ({ productId }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedImages, setSelectedImages] = useState({});
   const [currentImage, setCurrentImage] = useState(productId?.images[0].url);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [activeId, setActiveId] = useState(null);
 
   useEffect(() => {
     if (productId && productId.images && productId.images.length > 0) {
@@ -69,6 +74,15 @@ const ProductIdCard = ({ productId }) => {
 
   const handleAddToCart = () => {
     dispatch(addProductToCartThunk(productId?.id, quantity));
+    if (showSuccessModal && activeId) {
+      setShowErrorModal(true);
+      setTimeout(() => {
+        setShowErrorModal(false);
+      }, 2000);
+    } else {
+      setShowSuccessModal(true);
+      setActiveId(productId?.id);
+    }
   };
 
   return (
@@ -153,6 +167,20 @@ const ProductIdCard = ({ productId }) => {
           categoryId={productId?.category.id}
           idProduct={productId?.id}
         />
+      </section>
+      <section
+        className={`modal__addtocart ${
+          showSuccessModal && activeId === productId?.id ? "showmodal" : ""
+        }`}
+      >
+        {showSuccessModal && activeId === productId?.id && <ModalAddCart />}
+      </section>
+      <section
+        className={`modal__addtocart ${showErrorModal ? "showmodal" : ""}`}
+      >
+        {showErrorModal && activeId === productId?.id && showSuccessModal && (
+          <ModalErrorAddToCart />
+        )}
       </section>
     </div>
   );

@@ -1,6 +1,7 @@
 .productid {
   width: 100%;
   padding: 5em 1em 1em 1em;
+  position: relative;
 }
 
 .article__productid {
@@ -206,6 +207,22 @@
 
 .section__similarProducts {
   padding-top: 2em;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.showmodal {
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  animation: fadeOut 2s ease-in-out forwards;
 }
 
 @media (max-width: 900px) {
