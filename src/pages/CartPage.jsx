@@ -26,7 +26,6 @@ const CartPage = () => {
     axios
       .post(url, "", getConfigToken())
       .then((res) => {
-        console.log(res.data);
         dispatch(setCart([]));
       })
       .catch((e) => console.log(e));
