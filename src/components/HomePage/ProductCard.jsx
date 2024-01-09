@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
   const [activeId, setActiveId] = useState(null);
   const navigate = useNavigate();
 
+  console.log(product);
   const handleNavigate = () => {
     navigate(`/products/${product.id}`);
   };
@@ -36,7 +37,11 @@ const ProductCard = ({ product }) => {
       <header className="header__producCard">
         <img
           className="header__producCard--img"
-          src={product.images[0].url}
+          src={
+            product.images[0]?.url
+              ? product.images[0].url
+              : "https://e-commerce-api-v2.academlo.tech/uploads/a.jpg"
+          }
           alt={product.title}
         />
       </header>
