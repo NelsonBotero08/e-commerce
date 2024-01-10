@@ -37,11 +37,7 @@ const ProductCard = ({ product }) => {
       <header className="header__producCard">
         <img
           className="header__producCard--img"
-          src={
-            product.images[0]?.url
-              ? product.images[0].url
-              : "https://e-commerce-api-v2.academlo.tech/uploads/a.jpg"
-          }
+          src={product.images[0]?.url}
           alt={product.title}
         />
       </header>
