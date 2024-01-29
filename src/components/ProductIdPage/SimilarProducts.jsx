@@ -8,7 +8,7 @@ const SimilarProducts = ({ categoryId, idProduct }) => {
 
   useEffect(() => {
     if (categoryId) {
-      const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${categoryId}`;
+      const url = `http://localhost:8080/products?categoryId=${categoryId}`;
       getCategoryProduct(url);
     }
   }, [categoryId]);

@@ -22,7 +22,7 @@ const CartPage = () => {
   }, 0);
 
   const handlePurchase = () => {
-    const url = "https://e-commerce-api-v2.academlo.tech/api/v1/purchases";
+    const url = "http://localhost:8080/purchases";
     axios
       .post(url, "", getConfigToken())
       .then((res) => {

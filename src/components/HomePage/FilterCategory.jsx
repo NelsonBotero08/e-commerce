@@ -5,13 +5,12 @@ import "../style/HomePage/FilterCategory.css";
 const FilterCategory = ({ setSearchCategory }) => {
   const [categories, getCategories] = useFetch();
   const [expand, setExpand] = useState(true);
-
   const handleExpand = () => {
     setExpand(!expand);
   };
 
   useEffect(() => {
-    const url = "https://e-commerce-api-v2.academlo.tech/api/v1/categories";
+    const url = "http://localhost:8080/categories";
     getCategories(url);
   }, []);
 

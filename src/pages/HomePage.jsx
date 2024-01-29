@@ -19,7 +19,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const url = "https://e-commerce-api-v2.academlo.tech/api/v1/products";
+    const url = "http://localhost:8080/products";
     dispatch(getProductsThunk(url));
   }, []);
 

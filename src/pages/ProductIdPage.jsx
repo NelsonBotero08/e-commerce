@@ -9,7 +9,7 @@ const ProductIdPage = () => {
   const [product, getProduct] = useFetch();
 
   useEffect(() => {
-    const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`;
+    const url = `http://localhost:8080/products/${id}`;
     getProduct(url);
   }, [id]);
 

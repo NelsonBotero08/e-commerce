@@ -7,7 +7,7 @@ const CardPurchases = ({ infoPurchase }) => {
       <header className="header__purchases">
         <img
           className="img__purchases"
-          src={infoPurchase.product.images[0].url}
+          src={infoPurchase.product.images?.[0].url}
           alt=""
         />
       </header>

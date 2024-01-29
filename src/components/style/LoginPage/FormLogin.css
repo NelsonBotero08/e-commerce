@@ -90,3 +90,36 @@
 .logintvisible {
   display: none;
 }
+
+.modal__createdUser,
+.modal__errorCreated {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 4em;
+}
+
+.content__h2--created {
+  background-color: rgba(146, 205, 146, 0.375);
+  color: green;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  gap: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.content__h2--errorCreated {
+  background-color: rgba(205, 148, 146, 0.375);
+  color: rgb(210, 64, 64);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  gap: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}

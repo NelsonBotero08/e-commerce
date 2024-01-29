@@ -7,7 +7,7 @@ const PurchasesPage = () => {
   const [purchase, getPurchase] = useFetch();
 
   useEffect(() => {
-    const url = "https://e-commerce-api-v2.academlo.tech/api/v1/purchases";
+    const url = "http://localhost:8080/purchases";
     getPurchase(url, getConfigToken());
   }, []);
   return (

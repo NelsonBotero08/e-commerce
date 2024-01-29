@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import useAuth from "../../hook/useAuth";
 import "../style/LoginPage/FormLogin.css";
+import useAuth from "../../hook/useAuth";
 
 const FormLogin = () => {
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
   const { register, handleSubmit, reset } = useForm();
   const { loginUser } = useAuth();
   const token = localStorage.getItem("token");
 
   const submit = (data) => {
-    loginUser(data);
-
-    reset({
-      email: "",
-      password: "",
-    });
-
-    setTimeout(function () {
-      window.location.reload();
-    }, 1500);
+    loginUser(data)
+      .then(() => {
+        setSuccessModalOpen(true);
+        reset();
+        setTimeout(() => {
+          setSuccessModalOpen(false);
+        }, 3000);
+      })
+      .catch(() => {
+        setErrorModalOpen(true);
+        setTimeout(() => {
+          setErrorModalOpen(false);
+        }, 3000);
+      });
   };
 
   const handleSubmitLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
-
-    setTimeout(function () {
-      window.location.reload();
-    }, 500);
+    setIsLoggedIn(false);
+    window.location.reload();
   };
 
   return (
@@ -64,6 +69,27 @@ const FormLogin = () => {
         <i className="bx bxs-user-circle"></i>
         <button className="btn__login">Logout</button>
       </form>
+      {successModalOpen && (
+        <div className="modal__createdUser">
+          <div className="modal-content">
+            <h2 className="content__h2--created">
+              <i className="bx bx-check"></i>
+              User Login
+            </h2>
+          </div>
+        </div>
+      )}
+
+      {/* Error Modal */}
+      {errorModalOpen && (
+        <div className="modal__errorCreated">
+          <div className="modal-content">
+            <h2 className="content__h2--errorCreated">
+              <i className="bx bx-x"></i>Unvalidated user or invalid credentials
+            </h2>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

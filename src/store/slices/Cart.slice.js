@@ -24,7 +24,7 @@ export const { addToCart, deleteItemCart, setCart, updateItemCart } =
 
 export default cartSlice.reducer;
 
-const baseUrl = "https://e-commerce-api-v2.academlo.tech/api/v1/cart";
+const baseUrl = "http://127.0.0.1:8080/productCarts";
 
 export const getCartThunk = () => (dispatch) => {
   const url = `${baseUrl}`;
