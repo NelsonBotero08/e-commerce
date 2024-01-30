@@ -26,18 +26,7 @@ const useAuth = () => {
     }
   };
 
-  const verifyCode = async (code) => {
-    const url = `http://localhost:8080/users/verify/${code}`;
-    try {
-      const res = await axios.get(url);
-      return res.data;
-    } catch (error) {
-      console.error("Error verifying code:", error);
-      throw error;
-    }
-  };
-
-  return { registerUser, loginUser, verifyCode };
+  return { registerUser, loginUser };
 };
 
 export default useAuth;

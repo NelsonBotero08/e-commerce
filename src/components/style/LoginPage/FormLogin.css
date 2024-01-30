@@ -7,6 +7,10 @@
   height: 100vh;
 }
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
 .bxs-user-circle {
   font-size: 10em;
 }

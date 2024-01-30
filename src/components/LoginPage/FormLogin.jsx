@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "../style/LoginPage/FormLogin.css";
 import useAuth from "../../hook/useAuth";
+import { Link } from "react-router-dom";
 
 const FormLogin = () => {
   const [successModalOpen, setSuccessModalOpen] = useState(false);
@@ -60,6 +61,12 @@ const FormLogin = () => {
             />
           </label>
           <button className="btn__login">Login</button>
+          <br />
+          <h3>
+            <Link to="/reset-password" className="link">
+              Olvidé mi contraseña
+            </Link>
+          </h3>
         </section>
       </form>
       <form
@@ -79,8 +86,6 @@ const FormLogin = () => {
           </div>
         </div>
       )}
-
-      {/* Error Modal */}
       {errorModalOpen && (
         <div className="modal__errorCreated">
           <div className="modal-content">

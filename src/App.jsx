@@ -8,6 +8,8 @@ import CartPage from "./pages/CartPage";
 import PurchasesPage from "./pages/PurchasesPage";
 import NavBar from "./components/shared/NavBar";
 import VerifyPage from "./components/RegisterPage/VerifyPage";
+import FormResetPassword from "./components/ResetPassword/FormResetPassword";
+import FormUpdatePassword from "./components/ResetPassword/FormUpdatePassword";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/verify_email/:code" element={<VerifyPage />} />
+        <Route path="/reset-password" element={<FormResetPassword />} />
+        <Route path="/reset_password/:code" element={<FormUpdatePassword />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/cart" element={<CartPage />} />
           <Route path="/purchases" element={<PurchasesPage />} />

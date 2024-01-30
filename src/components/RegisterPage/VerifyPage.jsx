@@ -11,8 +11,6 @@ const VerifyPage = () => {
     axios
       .get(`http://localhost:8080/users/verify/${emailCode}`)
       .then((res) => {
-        // Corregido: Captura la respuesta del servidor en 'res'
-        console.log(res.data);
         setVerifiedStatus("verified");
       })
       .catch(() => {
