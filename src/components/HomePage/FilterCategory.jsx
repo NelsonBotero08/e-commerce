@@ -10,7 +10,7 @@ const FilterCategory = ({ setSearchCategory }) => {
   };
 
   useEffect(() => {
-    const url = "http://localhost:8080/categories";
+    const url = "https://ecommersbackend-s8c9.onrender.com/categories";
     getCategories(url);
   }, []);
 

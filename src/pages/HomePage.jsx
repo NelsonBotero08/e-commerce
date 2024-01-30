@@ -19,7 +19,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const url = "http://localhost:8080/products";
+    const url = "https://ecommersbackend-s8c9.onrender.com/products";
     dispatch(getProductsThunk(url));
   }, []);
 

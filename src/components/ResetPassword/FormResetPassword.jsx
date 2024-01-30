@@ -12,7 +12,10 @@ const ResetPasswordForm = () => {
     const frontBaseUrl = location.protocol + "//" + location.host;
     const body = { email, frontBaseUrl };
     try {
-      await axios.post("http://localhost:8080/users/reset_password", body);
+      await axios.post(
+        "https://ecommersbackend-s8c9.onrender.com/users/reset_password",
+        body
+      );
       setEmailSent(true);
       reset();
     } catch (error) {

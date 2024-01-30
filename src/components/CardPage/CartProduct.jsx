@@ -9,7 +9,6 @@ import ModalDeletCart from "../../pages/ModalDeletCart";
 import ModalUpdateCart from "../../pages/ModalUpdateCart";
 
 const CartProduct = ({ prod }) => {
-  console.log(prod);
   const [modalDelete, setModalDelete] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
   const dispatch = useDispatch();

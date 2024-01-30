@@ -7,7 +7,7 @@ const PurchasesPage = () => {
   const [purchase, getPurchase] = useFetch();
 
   useEffect(() => {
-    const url = "http://localhost:8080/purchases";
+    const url = "https://ecommersbackend-s8c9.onrender.com/purchases";
     getPurchase(url, getConfigToken());
   }, []);
   return (

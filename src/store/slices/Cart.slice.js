@@ -24,7 +24,7 @@ export const { addToCart, deleteItemCart, setCart, updateItemCart } =
 
 export default cartSlice.reducer;
 
-const baseUrl = "http://127.0.0.1:8080/productCarts";
+const baseUrl = "https://ecommersbackend-s8c9.onrender.com/productCarts";
 
 export const getCartThunk = () => (dispatch) => {
   const url = `${baseUrl}`;

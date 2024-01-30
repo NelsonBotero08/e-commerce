@@ -2,7 +2,7 @@ import axios from "axios";
 
 const useAuth = () => {
   const registerUser = async (user) => {
-    const url = "http://localhost:8080/users";
+    const url = "https://ecommersbackend-s8c9.onrender.com/users";
     try {
       const res = await axios.post(url, user);
       console.log(res.data);
@@ -14,7 +14,7 @@ const useAuth = () => {
   };
 
   const loginUser = async (credentials) => {
-    const url = "http://localhost:8080/users/login";
+    const url = "https://ecommersbackend-s8c9.onrender.com/users/login";
     try {
       const res = await axios.post(url, credentials);
       console.log(res.data);

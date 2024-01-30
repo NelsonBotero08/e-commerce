@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import("../style/ResetPassword/FormUpdatePassword.css");
 
@@ -13,9 +13,12 @@ const UpdatePassword = () => {
   const confirmPassword = watch("confirmPassword");
 
   const submit = async ({ password }) => {
-    await axios.post(`http://localhost:8080/users/reset_password/${code}`, {
-      password,
-    });
+    await axios.post(
+      `https://ecommersbackend-s8c9.onrender.com/users/reset_password/${code}`,
+      {
+        password,
+      }
+    );
     setPasswordChanged(true);
     reset();
   };
@@ -55,6 +58,12 @@ const UpdatePassword = () => {
         <button className="btn__updatePassword" type="submit">
           Guardar Contraseña
         </button>
+        <br />
+        <p>
+          <Link className="link" to="/login">
+            Login with your credentials
+          </Link>
+        </p>
       </form>
 
       {passwordChanged && (

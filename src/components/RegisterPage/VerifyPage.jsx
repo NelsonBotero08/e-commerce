@@ -5,17 +5,17 @@ import axios from "axios";
 
 const VerifyPage = () => {
   const { code: emailCode } = useParams();
-  const [verifiedStatus, setVerifiedStatus] = useState("loading");
+  const [verifiedStatus, setVerifiedStatus] = useState();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/users/verify/${emailCode}`)
-      .then((res) => {
+      .get(
+        `https://ecommersbackend-s8c9.onrender.com/users/verify/${emailCode}`
+      )
+      .then(() => {
         setVerifiedStatus("verified");
       })
-      .catch(() => {
-        setVerifiedStatus("notVerified");
-      });
+      .catch(() => {});
   }, [emailCode]);
 
   if (verifiedStatus === "loading") {
@@ -30,7 +30,7 @@ const VerifyPage = () => {
         </div>
         <h1>User verified!</h1>
         <p>
-          <Link to="/login">Login</Link> with your credentials to enter the app
+          <Link to="/login">Login with your credentials to enter the app</Link>
         </p>
       </div>
     );
